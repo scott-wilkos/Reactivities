@@ -1,8 +1,11 @@
+using API.Controllers;
 using Domain;
 using MediatR;
 using Persistence;
 
-namespace Application.Activities
+namespace API.Controllers.Activities;
+
+public partial class ActivitiesController : BaseApiController
 {
     public class Details
     {

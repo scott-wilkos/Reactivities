@@ -1,12 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MediatR;
 using Persistence;
 
-namespace Application.Activities
+namespace API.Controllers.Activities;
+
+public partial class ActivitiesController : BaseApiController
 {
+    public ActivitiesController()
+    {
+    }
+
     public class Delete
     {
         public class Command : IRequest

@@ -5,6 +5,8 @@
 
 appsettings.json
 StudentAssets/
+*.db
+*.db.*
 
 # User-specific files
 *.rsuser

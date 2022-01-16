@@ -3,7 +3,9 @@ using Domain;
 using MediatR;
 using Persistence;
 
-namespace Application.Activities
+namespace API.Controllers.Activities;
+
+public partial class ActivitiesController : BaseApiController
 {
     public class Edit
     {
@@ -15,11 +17,11 @@ namespace Application.Activities
         public class Handler : IRequestHandler<Command>
         {
             private readonly DataContext context;
-        private readonly IMapper _mapper;
+            private readonly IMapper _mapper;
 
             public Handler(DataContext context, IMapper mapper)
             {
-            this._mapper = mapper;
+                this._mapper = mapper;
                 this.context = context;
             }
             async Task<Unit> IRequestHandler<Command, Unit>.Handle(Command request, CancellationToken cancellationToken)

@@ -1,16 +1,15 @@
-using Application.Activities;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+namespace API.Controllers.Activities
 {
-    public class ActivitiesController : BaseApiController
+    public partial class ActivitiesController : BaseApiController
     {
         [HttpGet]
-        public async Task<ActionResult<List<Domain.Activity>>> GetActivities() => await Mediator.Send(new List.Query());
+        public async Task<ActionResult<List<Activity>>> GetActivities() => await Mediator.Send(new List.Query());
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Domain.Activity>> GetActivity(Guid id) => (await Mediator.Send(new Details.Query { Id = id }));
+        public async Task<ActionResult<Activity>> GetActivity(Guid id) => await Mediator.Send(new Details.Query { Id = id });
 
         [HttpPost]
         public async Task<IActionResult> AddActivity(Activity activity) => Ok(await Mediator.Send(new Create.Command { Activity = activity }));
