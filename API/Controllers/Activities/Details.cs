@@ -1,4 +1,3 @@
-using API.Controllers;
 using Domain;
 using MediatR;
 using Persistence;
